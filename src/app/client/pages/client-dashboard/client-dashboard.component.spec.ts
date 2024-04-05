@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SingupComponent } from './singup.component';
+import { ClientDashboardComponent } from './client-dashboard.component';
 
-describe('SingupComponent', () => {
-  let component: SingupComponent;
-  let fixture: ComponentFixture<SingupComponent>;
+describe('ClientDashboardComponent', () => {
+  let component: ClientDashboardComponent;
+  let fixture: ComponentFixture<ClientDashboardComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [SingupComponent]
+      declarations: [ClientDashboardComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(SingupComponent);
+    fixture = TestBed.createComponent(ClientDashboardComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
