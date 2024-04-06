@@ -3,7 +3,8 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
 
-const BASIC_URL = 'http://localhost:8090';
+const BASIC_URL = 'http://localhost:8090/';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -11,10 +12,10 @@ export class AuthService {
 
   constructor(private http: HttpClient,) {}
 
-  registerClient(signupRequestDTO: any): Observable<any>{
-    return this.http.post(BASIC_URL + 'client/sign-up',signupRequestDTO )
+  registerClient(signupRequestDTO:any): Observable<any>{
+    return this.http.post(BASIC_URL + 'client/sign-up',signupRequestDTO );
   }
   registerCompany(signupRequestDTO: any): Observable<any>{
-    return this.http.post(BASIC_URL + 'company/sign-up',signupRequestDTO )
+    return this.http.post(BASIC_URL + 'company/sign-up',signupRequestDTO );
   }
 }
