@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
-import { NzNotificationComponent, NzNotificationService } from "ng-zorro-antd/notification";
+import {  NzNotificationService } from "ng-zorro-antd/notification";
 import { AuthService } from '../services/auth/auth.service';
 
 
