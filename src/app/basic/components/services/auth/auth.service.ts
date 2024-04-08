@@ -4,7 +4,7 @@ import { Observable, map, pipe } from 'rxjs';
 
 
 const BASIC_URL = 'http://localhost:8090/';
-export const AUTH_HEADER = 'authorization';
+export const AUTH_HEADER = `authorization`;
 
 @Injectable({
   providedIn: 'root'
@@ -31,6 +31,6 @@ export class AuthService {
         console.log(bearerToken);
         return res;
       })
-    );
+    )
   }
 }

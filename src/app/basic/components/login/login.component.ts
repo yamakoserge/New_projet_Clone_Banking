@@ -40,6 +40,6 @@ export class LoginComponent {
       `Réessayez`,
       {nzDuration:5000}
     )
-  });
+  })
  }
 }

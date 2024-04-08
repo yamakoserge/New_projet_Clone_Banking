@@ -1,4 +1,5 @@
 <div class="bg">
+  <div class="child">
     <div class="parent">
       <div nz-row class="imgdiv">
         <div nz-col nzSpan="24">
@@ -6,7 +7,7 @@
         </div>
       </div>
   
-      <form nz-form="validateForm" class="login-form"(ngSubmit)="submitForm()">
+      <form nz-form [formGroup]="validateForm" class="login-form" (ngSubmit)="submitForm()">
         <nz-form-item>
           <nz-form-control nzErrorTip="SVP Entrer votre E-mail">
             <nz-input-group nzPrefixIcon="user">
@@ -23,11 +24,12 @@
           </nz-form-control>
         </nz-form-item>
         
-       <button nz-button class="login-form-button login-form-margin">
+       <button nz-button class="login-form-button login-form-margin" [nzType]="'primary'">
           Log In
         </button>
        Or <a routerLink="/register">register now!</a> 
       </form>
     </div>
   </div>
+</div>
   
