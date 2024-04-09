@@ -24,7 +24,7 @@ export class LoginComponent {
 
  ngOnInit(){
   this.validateForm = this.fb.group({
-    username : [null, [Validators.required]],
+    userName : [null, [Validators.required]],
     password : [null, [Validators.required]],
   })
  } 
@@ -37,7 +37,7 @@ export class LoginComponent {
     this.notification
     .error(
       'ERROR',
-      `Réessayez`,
+      `Réessayez SVP`,
       {nzDuration:5000}
     )
   })

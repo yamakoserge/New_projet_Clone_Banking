@@ -1,35 +1,33 @@
+
 <div class="bg">
-  <div class="child">
     <div class="parent">
-      <div nz-row class="imgdiv">
+     <div class="child">
+      <div nz-row class="imgDiv">
         <div nz-col nzSpan="24">
-          <h1 style="margin-left: 100px">Login</h1>
+          <h1 style="margin-left: 100px;">Login</h1>
         </div>
       </div>
-  
-      <form nz-form [formGroup]="validateForm" class="login-form" (ngSubmit)="submitForm()">
-        <nz-form-item>
-          <nz-form-control nzErrorTip="SVP Entrer votre E-mail">
-            <nz-input-group nzPrefixIcon="user">
-              <input type="text" nz-input formControlName="userName" placeholder="Email">
-            </nz-input-group>
-          </nz-form-control>
-        </nz-form-item>
-
-        <nz-form-item>
-          <nz-form-control nzErrorTip="SVP entrer votre Mot de Passe">
-            <nz-input-group nzPrefixIcon="lock">
-              <input type="password" nz-input formControlName="password" placeholder="password">
-            </nz-input-group>
-          </nz-form-control>
-        </nz-form-item>
-        
-       <button nz-button class="login-form-button login-form-margin" [nzType]="'primary'">
-          Log In
-        </button>
-       Or <a routerLink="/register">register now!</a> 
-      </form>
-    </div>
+          <form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()">
+            <nz-form-item>
+              <nz-form-control nzErrorTip="Please input your username!">
+                <nz-input-group nzPrefixIcon="user">
+                  <input formControlName="userName" nz-input placeholder="Username" />
+                </nz-input-group>
+              </nz-form-control>
+            </nz-form-item>
+            <nz-form-item>
+              <nz-form-control nzErrorTip="Please input your Password!">
+                <nz-input-group nzPrefixIcon="lock">
+                  <input formControlName="password" nz-input type="password" placeholder="Password" />
+                </nz-input-group>
+              </nz-form-control>
+            </nz-form-item>
+            <nz-form-item>
+              <nz-form-control>
+                <button nz-button class="login-form-button login-form-margin" nzType="primary" [disabled]="!validateForm.valid">Log in</button>
+              </nz-form-control>
+            </nz-form-item>
+          </form>
+      </div>
   </div>
 </div>
-  

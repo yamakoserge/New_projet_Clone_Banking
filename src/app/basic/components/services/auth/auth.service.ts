@@ -31,6 +31,6 @@ export class AuthService {
         console.log(bearerToken);
         return res;
       })
-    )
+    );
   }
 }
