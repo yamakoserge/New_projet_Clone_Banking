@@ -29,17 +29,32 @@ export class LoginComponent {
   })
  } 
  
- submitForm(){
-  this.authService.login(this.validateForm.get(['userName'])!.value, this.validateForm.get(['password'])!.value)
-  .subscribe(res=>{
-  console.log(res)
-  },error=>{
-    this.notification
-    .error(
-      'ERROR',
-      `Réessayez SVP`,
-      {nzDuration:5000}
-    )
-  })
+
+
+  submitForm(){
+   this.authService.login(this.validateForm.get(['userName'])!.value, this.validateForm.get(['password'])!.value)
+   .subscribe(res=>{
+   console.log(res)
+   },error=>{
+     this.notification
+     .error(
+      'ERREUR',
+      `Veuillez réessayer, SVP.`,
+       {nzDuration:5000}
+     )
+   })
  }
+
+//  async submitForm() {
+//   try {
+//     const { userName, password } = this.validateForm.value;
+//     const res = await this.authService.login(userName, password).toPromise();
+//     console.log(res);
+//   } catch (error) {
+//     this.notification.error('ERROR', `Réessayez SVP`, { nzDuration: 5000 });
+//   }
+// }
+
+
+
 }
