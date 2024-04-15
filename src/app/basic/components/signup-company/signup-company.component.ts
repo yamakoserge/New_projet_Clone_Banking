@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
-import { NzNotificationService } from 'ng-zorro-antd/notification';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../services/auth/auth.service';
+import { NzNotificationService } from 'ng-zorro-antd/notification';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-signup-company',

@@ -32,6 +32,7 @@ export class LoginComponent {
 
 
   submitForm(){
+    
    this.authService.login(this.validateForm.get(['userName'])!.value, this.validateForm.get(['password'])!.value)
    .subscribe(res=>{
    console.log(res)

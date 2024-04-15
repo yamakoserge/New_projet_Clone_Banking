@@ -10,6 +10,7 @@ export const AUTH_HEADER = `authorization`;
   providedIn: 'root'
 })
 export class AuthService {
+  [x: string]: any;
  
 
   constructor(private http: HttpClient,) {}

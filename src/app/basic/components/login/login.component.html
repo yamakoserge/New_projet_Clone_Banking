@@ -7,7 +7,7 @@
           <h1 style="margin-left: 100px;">Login</h1>
         </div>
       </div>
-          <form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()">
+          <form nz-form [formGroup]= "validateForm" (ngSubmit)= "submitForm()">
             <nz-form-item>
               <nz-form-control nzErrorTip="Please input your username!">
                 <nz-input-group nzPrefixIcon="user">
@@ -24,7 +24,7 @@
             </nz-form-item>
             <nz-form-item>
               <nz-form-control>
-                <button nz-button class="login-form-button login-form-margin" nzType="primary" [disabled]="!validateForm.valid">Log in</button>
+                <button nz-button class="login-form-button login-form-margin" nzType="primary" [disabled]= "!validateForm.valid">Log in</button>
               </nz-form-control>
             </nz-form-item>
           </form>
