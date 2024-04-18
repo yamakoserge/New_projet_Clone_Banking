@@ -46,16 +46,5 @@ export class LoginComponent {
    })
  }
 
-//  async submitForm() {
-//   try {
-//     const { userName, password } = this.validateForm.value;
-//     const res = await this.authService.login(userName, password).toPromise();
-//     console.log(res);
-//   } catch (error) {
-//     this.notification.error('ERROR', `Réessayez SVP`, { nzDuration: 5000 });
-//   }
-// }
-
-
 
 }
