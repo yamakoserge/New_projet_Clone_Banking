@@ -1,15 +1,58 @@
+<div *ngIf= "!isClientLoggIn && !isCompanyLoggIn" >
+    <nz-header class="main-header" nz-row nzType="flex" style="background-color: #bb2929;">
+      
+        <div>
+            <h2 style="color: #ffffff; padding-left:10px;">Minilux System</h2>
+        </div>
+        <div class="nav-links">
+          <a nz-button nzType="link" routerLink="/home" routerLinkActive="active">Home</a>
+          <a nz-button nzType="link" routerLink="/register" routerLinkActive="active">Register</a>
+          <a nz-button nzType="link" routerLink="/login" routerLinkActive="active">Login</a>
+        </div>
 
-<nz-header class="main-header" nz-row nzType="flex" style="background-color: #bb2929;">
-  
-  <div>
-      <h2 style="color: #ffffff; padding-left:10px;">Minilux System</h2>
-  </div>
-  <div class="nav-links">
-    <a nz-button nzType="link" routerLink="/home" routerLinkActive="active">Home</a>
-    <a nz-button nzType="link" routerLink="/register" routerLinkActive="active">Register</a>
-    <a nz-button nzType="link" routerLink="/login" routerLinkActive="active">Login</a>
-  </div>
+    </nz-header>
+</div>
 
-</nz-header>
+<div *ngIf= "isClientLoggIn">
+  <nz-header class="main-header" nz-row nzType="flex" style="background-color: #bb2929;">
+    <h2 style="color: white; padding-left: 10px;">Minilux System</h2>
+    <div class="nav-links">
+        <a nz-button nzType="link" routerLink="/client/dashboard" routerLinkActive="active">Dashboard</a>
+        <a nz-button nzType="link" routerLink="/client/bookings" routerLinkActive="active">Booking</a>
+        <a nz-button nzType="link" (click)= "logout()" routerLinkActive="active">Logout</a>
+    </div>
+  </nz-header>
+    <nz-sider nzCollapsible nzBreakpoint="lg" [nzCollapsedWidth]="0" class="mobile-sidenav">
+      <ul class="nav-links" nz-menu nzTheme="dark" nzMode="inline">
+        <li nz-menu-item>
+          <a nz-button nzType="link" routerLink="/client/dashboard" routerLinkActive="active">Dashboard</a>
+          <a nz-button nzType="link" routerLink="/client/bookings" routerLinkActive="active">Bonkings</a>
+          <a nz-button nzType="link" (click)= "logout()" routerLinkActive="active">logout</a>
+        </li>
+      </ul>
+    </nz-sider>
+</div>
+
+<div *ngIf= "isCompanyLoggIn">
+  <nz-header class="main-header" nz-row nzType="flex" style="background-color: #bb2929;">
+    <h2 style="color: white; padding-left: 10px;">Minilux System</h2>
+    <div class="nav-links">
+        <a nz-button nzType="link" routerLink="/company/dashboard" routerLinkActive="active">Dashboard</a>
+        <a nz-button nzType="link" routerLink="/company/ad" routerLinkActive="active">Post Ad</a>
+        <a nz-button nzType="link" routerLink="/company/ads" routerLinkActive="active">Ads</a>
+        <a nz-button nzType="link" (click)= "logout()" routerLinkActive="active">Logout</a>
+    </div>
+  </nz-header>
+    <nz-sider nzCollapsible nzBreakpoint="lg" [nzCollapsedWidth]="0" class="mobile-sidenav">
+      <ul class="nav-links" nz-menu nzTheme="dark" nzMode="inline">
+        <li nz-menu-item> 
+          <a nz-button nzType="link" routerLink="/company/dashboard" routerLinkActive="active">Dashboard</a>
+          <a nz-button nzType="link" routerLink="/company/ad" routerLinkActive="active">Post Ad</a>
+          <a nz-button nzType="link" routerLink="/company/ads" routerLinkActive="active">Ads</a>
+          <a nz-button nzType="link" (click)= "logout()" routerLinkActive="active">logout</a>
+        </li>
+      </ul>
+    </nz-sider>
+</div>
 
 <router-outlet></router-outlet>

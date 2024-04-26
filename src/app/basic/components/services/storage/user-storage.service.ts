@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 
 
-const TOKEN ='S_TOKEN';
-const USER = 'S_USER';
+const TOKEN ='s_token';
+const USER = 's_user';
 
 @Injectable({
   providedIn: 'root'
@@ -43,7 +43,7 @@ export class UserStorageService {
   }
 
   static isClientLoggedIn(): boolean{
-    if(this.getToken()===null){
+    if(this.getToken() === null){
       return false;
     }
     const role: string = this.getUserRole();
