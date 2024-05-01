@@ -25,8 +25,8 @@ export class CompanyService {
   createAuthorizationHeader(): HttpHeaders{
     let authHeaders: HttpHeaders = new HttpHeaders();
     return authHeaders.set(
-      `Authorization`,
-      'Bearer ' + UserStorageService.getToken()
+      'Authorization',
+     'Bearer ' + UserStorageService.getToken()
     )
   }
 }

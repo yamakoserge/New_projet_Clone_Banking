@@ -5,6 +5,8 @@ import { CompanyRoutingModule } from './company-routing.module';
 import { CompanyComponent } from './company.component';
 import { CompanyDashboardComponent } from './pages/company-dashboard/company-dashboard.component';
 import { CreateAdComponent } from './pages/create-ad/create-ad.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { DemoNgZorroAntdModule } from '../DemoNgZorroAntModule';
 
 
 @NgModule({
@@ -15,7 +17,9 @@ import { CreateAdComponent } from './pages/create-ad/create-ad.component';
   ],
   imports: [
     CommonModule,
-    CompanyRoutingModule
+    CompanyRoutingModule,
+    DemoNgZorroAntdModule,
+    ReactiveFormsModule,
   ]
 })
 export class CompanyModule { }

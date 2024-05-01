@@ -15,10 +15,12 @@ export class CreateAdComponent {
   imagePreview: string | ArrayBuffer | null;
   validateForm!: FormGroup;
 
+
   constructor(private fb: FormBuilder,
   private notification: NzNotificationService,
-  private CompanyService: CompanyService,
-  private router: Router,){}
+  private router: Router,
+  private companyService: CompanyService
+  ){}
 
   ngOnInit(){
     this.validateForm = this.fb.group({
@@ -29,13 +31,17 @@ export class CreateAdComponent {
   }
 
   onFileSelected(event:any){
+    this.selectedFile=event.target.files[0];
+    this.previewImage();
+  }
+ 
+  previewImage(){
     const reader = new FileReader();
-    reader.onload =() =>{
-      this.imagePreview = reader.result;
+    reader.onload=()=>{
+      this.imagePreview=reader.result;
     }
     reader.readAsDataURL(this.selectedFile);
   }
-
   postAd(){
     const formData: FormData = new FormData();
 
@@ -44,10 +50,10 @@ export class CreateAdComponent {
     formData.append('description', this.validateForm.get('description').value);
     formData.append('price', this.validateForm.get('price').value);
 
-    this.CompanyService.postAd(formData).subscribe(res =>{
+    this.companyService.postAd(formData).subscribe(res =>{
       this.notification
       .success(
-        `SUCCESS`,
+        'SUCCESS',
         `Ad Posted Successfullyl`,
         {nzDuration: 5000}
       );
@@ -55,7 +61,7 @@ export class CreateAdComponent {
     }, error =>{
       this.notification
       .error(
-        `ERROR`,
+        'ERROR',
         `${error.error}`,
         {nzDuration:5000}
       )
