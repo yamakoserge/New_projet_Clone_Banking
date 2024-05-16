@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-create-ad',
   templateUrl: './create-ad.component.html',
-  styleUrl: './create-ad.component.scss'
+  styleUrls: ['./create-ad.component.scss']
 })
 export class CreateAdComponent {
 
@@ -55,7 +55,7 @@ export class CreateAdComponent {
       .success(
         'SUCCESS',
         `Ad Posted Successfullyl`,
-        {nzDuration: 5000}
+        {nzDuration: 5000 }
       );
       this.router.navigateByUrl('/company/ads');
     }, error =>{

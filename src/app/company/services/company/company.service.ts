@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { UserStorageService } from '../../../basic/components/services/storage/user-storage.service';
 
 
-const BASIC_URL = "http://localhost:8090";
+const BASIC_URL = "http://localhost:8090/";
 
 
 @Injectable({
@@ -17,7 +17,7 @@ export class CompanyService {
 
   postAd(adDTO:any): Observable<any>{
     const userId = UserStorageService.getUserId();
-    return this.http.post(BASIC_URL + `api/company/ad/${userId}`, adDTO,{
+    return this.http.post(BASIC_URL + `api/company/ad/${userId}`, adDTO, {
       headers : this.createAuthorizationHeader()
     })
   }
