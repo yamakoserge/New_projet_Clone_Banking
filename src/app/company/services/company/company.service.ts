@@ -15,9 +15,18 @@ export class CompanyService {
 
   constructor(private http: HttpClient) { }
 
+
   postAd(adDTO:any): Observable<any>{
     const userId = UserStorageService.getUserId();
     return this.http.post(BASIC_URL + `api/company/ad/${userId}`, adDTO, {
+      headers : this.createAuthorizationHeader()
+    })
+  }
+
+  
+  getAllAdsByUserId(): Observable<any>{
+    const userId = UserStorageService.getUserId();
+    return this.http.get(BASIC_URL + `api/company/ads/${userId}`,{
       headers : this.createAuthorizationHeader()
     })
   }
