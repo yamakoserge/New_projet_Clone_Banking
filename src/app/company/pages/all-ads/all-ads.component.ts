@@ -24,6 +24,6 @@ export class AllAdsComponent {
   }
 
   updateImg(img){
-    return 'data:image/jpeg;base64,' + img;
+    return `data:image/jpeg;base64,` + img;
   }
 }
