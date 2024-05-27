@@ -11,8 +11,7 @@ const routes: Routes = [
   { path: 'dashboard', component: CompanyDashboardComponent },
   { path: 'ad', component: CreateAdComponent },
   { path: 'ads', component: AllAdsComponent },
-  { path: 'update/:id', component: UpdateAdComponent},
-
+  { path: 'update/:id', component: UpdateAdComponent}
 ];
 
 @NgModule({

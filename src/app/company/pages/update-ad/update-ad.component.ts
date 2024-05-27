@@ -20,6 +20,8 @@ export class UpdateAdComponent {
     imagePreview: string | ArrayBuffer | null;
     validateForm!: FormGroup;
     existingImage: string | null = null;
+    
+    imgChanged= false;
   
   
     constructor(private fb: FormBuilder,
@@ -41,6 +43,8 @@ export class UpdateAdComponent {
     onFileSelected(event:any){
       this.selectedFile=event.target.files[0];
       this.previewImage();
+      this.existingImage = null;
+      this.imgChanged = true;      
     }
    
     previewImage(){
@@ -52,17 +56,20 @@ export class UpdateAdComponent {
     }
   updateAd(){
       const formData: FormData = new FormData();
+      if(this.imgChanged && this.selectedFile){
+        formData.append('img', this.selectedFile);
+      }
   
-      formData.append('img', this.selectedFile);
+   
       formData.append('serviceName', this.validateForm.get('serviceName').value);
       formData.append('description', this.validateForm.get('description').value);
       formData.append('price', this.validateForm.get('price').value);
   
-      this.companyService.postAd(formData).subscribe(res =>{
+      this.companyService.updateAd (this.adId,formData).subscribe(res =>{
         this.notification
         .success(
           'SUCCESS',
-          `Ad Posted Successfullyl`,
+          `Ad Update Successfullyl`,
           {nzDuration: 5000 }
         );
         this.router.navigateByUrl('/company/ads');
