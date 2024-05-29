@@ -38,13 +38,13 @@ export class CompanyService {
   }
 
   updateAd(adId:any, adDTO:any): Observable<any>{
-    return this.http.put(BASIC_URL + `api/company/${adId}`, adDTO,{
+    return this.http.put(BASIC_URL + `api/company/ad/${adId}`, adDTO,{
       headers : this.createAuthorizationHeader()
     })
   }
 
   deletedAd(adId:any): Observable<any>{
-    return this.http.delete(BASIC_URL + `api/company/${adId}`, {
+    return this.http.delete(BASIC_URL + `api/company/ad/${adId}`, {
       headers : this.createAuthorizationHeader()
     })
   }
