@@ -61,7 +61,7 @@ export class CreateAdComponent {
     }, error =>{
       this.notification
       .error(
-        'ERROR',
+        'Votre session a expiré!',
         `${error.error}`,
         {nzDuration:5000}
       )
