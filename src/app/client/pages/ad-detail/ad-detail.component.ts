@@ -1,7 +1,7 @@
 import { ActivatedRoute, Router } from '@angular/router';
 import { Component } from '@angular/core';
 import { ClientService } from '../../services/client.service';
-import { FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import {  NzNotificationService } from 'ng-zorro-antd/notification';
 import { UserStorageService } from '../../../basic/components/services/storage/user-storage.service';
 
@@ -23,7 +23,7 @@ export class AdDetailComponent {
   private activatedRoute: ActivatedRoute,
   private notification: NzNotificationService,
   private router: Router,
-  private fb: FormGroup){}
+  private fb: FormBuilder){}
 
   ngOnInit(){
     this.validateForm = this.fb.group({
