@@ -7,13 +7,15 @@ import { ClientDashboardComponent } from './pages/client-dashboard/client-dashbo
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DemoNgZorroAntdModule } from '../DemoNgZorroAntModule';
 import { AdDetailComponent } from './pages/ad-detail/ad-detail.component';
+import { MyBookingComponent } from './pages/my-booking/my-booking.component';
 
 
 @NgModule({
   declarations: [
     ClientComponent,
     ClientDashboardComponent,
-    AdDetailComponent
+    AdDetailComponent,
+    MyBookingComponent
   ],
   imports: [
     CommonModule,

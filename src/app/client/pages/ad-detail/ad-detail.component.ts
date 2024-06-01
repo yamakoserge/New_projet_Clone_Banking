@@ -44,7 +44,7 @@ export class AdDetailComponent {
       const bookServiceDTO = {
         bookDate : this.validateForm.get(['bookDate']).value,
         adId: this.adId,
-        userId: UserStorageService.getUser()
+        userId: UserStorageService.getUserId()
       }
       this.clientService.bookService(bookServiceDTO).subscribe(res=>{
         this.notification
