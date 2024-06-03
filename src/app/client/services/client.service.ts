@@ -40,7 +40,7 @@ export class ClientService {
   
   getMyBookings(): Observable<any>{
     const userId = UserStorageService.getUserId();
-    return this.http.post(BASIC_URL + `api/client/my-bookings/${userId}`,{
+    return this.http.get(BASIC_URL + `api/client/my-bookings/${userId}`,{
      headers : this.createAuthorizationHeader()
    })
  }

@@ -10,12 +10,14 @@ import { AdDetailComponent } from './pages/ad-detail/ad-detail.component';
 import { MyBookingComponent } from './pages/my-booking/my-booking.component';
 
 
+
 @NgModule({
   declarations: [
     ClientComponent,
     ClientDashboardComponent,
     AdDetailComponent,
-    MyBookingComponent
+    MyBookingComponent,
+   
   ],
   imports: [
     CommonModule,

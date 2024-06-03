@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-company-dashboard',
   templateUrl: './company-dashboard.component.html',
-  styleUrl: './company-dashboard.component.scss'
+  styleUrls: ['./company-dashboard.component.scss']
 })
 export class CompanyDashboardComponent {
 
@@ -29,21 +29,21 @@ export class CompanyDashboardComponent {
 
   changeBookingStatus(bookingId: number, status:string){
     this.companyService.changeBookingStatus(bookingId, status).subscribe(res=>{
-this.notification
-.success(
-  'SUCCESS',
-`Booking status changed succefully`,
-{nzDuration: 3000}
-);
-this.getAllAdBookings();
-    },error=>{
-this.notification
-.error(
-  'ERROR',
-  `${error.message}`,
-  {nzDuration:3000}
-)
-    })
-  }
+      this.notification
+      .success(
+        'SUCCESS',
+      `Booking status changed succefully`,
+      {nzDuration: 3000}
+      );
+      this.getAllAdBookings();
+          },error=>{
+      this.notification
+      .error(
+        'ERROR',
+        `${error.message}`,
+        {nzDuration:3000}
+      )
+          })
+        }
 
 }
