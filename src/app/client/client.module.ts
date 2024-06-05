@@ -8,6 +8,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DemoNgZorroAntdModule } from '../DemoNgZorroAntModule';
 import { AdDetailComponent } from './pages/ad-detail/ad-detail.component';
 import { MyBookingComponent } from './pages/my-booking/my-booking.component';
+import { ReviewComponent } from './pages/review/review.component';
 
 
 
@@ -17,6 +18,7 @@ import { MyBookingComponent } from './pages/my-booking/my-booking.component';
     ClientDashboardComponent,
     AdDetailComponent,
     MyBookingComponent,
+    ReviewComponent,
    
   ],
   imports: [
@@ -24,7 +26,8 @@ import { MyBookingComponent } from './pages/my-booking/my-booking.component';
     ClientRoutingModule,
     DemoNgZorroAntdModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    
   ]
 })
 export class ClientModule { }

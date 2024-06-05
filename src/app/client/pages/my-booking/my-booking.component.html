@@ -14,7 +14,7 @@
             <td style="font-weight: 600;">{{ booking.bookDate | date : "dd/MM/yyyy" }}</td>
             <td style="font-weight: 600;">{{ booking.reservationStatus }}</td>
             <span *ngIf="booking.reviewStatus == 'FALSE'">
-                <button style="margin-left: 10px;" nzSize="small" nz-button nzType="primary" nzDanger>
+                <button style="margin-left: 10px;" nzSize="small" nz-button nzType="primary" nzDanger routerLink="/client/review/{{booking.id}}">
                     Review
                 </button>
                 
