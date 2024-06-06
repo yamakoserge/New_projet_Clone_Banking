@@ -9,9 +9,9 @@ import { ReviewComponent } from './pages/review/review.component';
 const routes: Routes = [
   { path: '', component: ClientComponent },
   { path: 'dashboard', component: ClientDashboardComponent },
-  {path: 'bookings', component:  MyBookingComponent},
+  { path: 'bookings', component:  MyBookingComponent},
   { path: 'ad/:adId', component: AdDetailComponent },
-  { path: 'review/:Id', component: ReviewComponent },
+  { path: 'review/:id', component: ReviewComponent },
 ];
 
 @NgModule({

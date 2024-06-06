@@ -2,7 +2,7 @@ import { UserStorageService } from './../../../basic/components/services/storage
 import { ClientService } from './../../services/client.service';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 
 @Component({
@@ -12,9 +12,10 @@ import { NzNotificationService } from 'ng-zorro-antd/notification';
 })
 export class ReviewComponent {
 
-  bookId : number = this.activedroute.snapshot.params['id'];
+  bookId : number = this.activatedRoute.snapshot.params['id'];
   validateForm!: FormGroup;
 
+  
   
 
   constructor(
@@ -22,12 +23,12 @@ export class ReviewComponent {
     private notification: NzNotificationService,
     private router: Router, 
     private clientService: ClientService,
-    private activedroute: ActivatedRoute,){}
+    private activatedRoute: ActivatedRoute){}
 
     ngOnInit(){
       this.validateForm = this.fb.group({
         rating: [null, Validators.required],
-        review: [null, Validators.required],
+        review: [null, Validators.required]
       })
     }
 

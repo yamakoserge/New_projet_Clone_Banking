@@ -8,7 +8,7 @@
         <form nz-form [formGroup]= "validateForm" (ngSubmit)="giveReview()">
             <div nz-col nzSpan = "24">
                 <nz-form-item>
-                   <nz-form-control nzHasFeedback="24" nzErrorTip="this Input Is Required!">
+                   <nz-form-control nzHasFeedback [nzXs]="24" nzErrorTip="this Input Is Required!">
                     <textarea name="5" nz-input placeholder="Write a Review" formControlName="review"></textarea>
                    </nz-form-control> 
                 </nz-form-item>

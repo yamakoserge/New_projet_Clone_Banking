@@ -16,7 +16,7 @@ export class AdDetailComponent {
   adId= this.activatedRoute.snapshot.params['adId'];
   avatarUrl:any;
   ad: any;
-
+  review:any;
   validateForm!: FormGroup;
 
   constructor(private clientService: ClientService,
@@ -38,6 +38,7 @@ export class AdDetailComponent {
         console.log(res);
         this.avatarUrl= `data:image/jpeg;base64,` + res.adDTO.returnedImg;
         this.ad = res.adDTO;
+        this.review = res.reviewDTOList;
       })
     }
     bookService(){
